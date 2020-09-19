@@ -59,25 +59,6 @@ public class RegisterActivity extends AppCompatActivity {
         }
     }
 
-    btnSignUp.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            String email = inputEmail.getText().toString().trim();
-            String password = inputPassword.getText().toString().trim();
-            if (TextUtils.isEmpty(email)) {
-                Toast.makeText(getApplicationContext(), "Enter email address!", Toast.LENGTH_SHORT).show();
-                return;
-            }
-            if (TextUtils.isEmpty(password)) {
-                Toast.makeText(getApplicationContext(), "Enter password!", Toast.LENGTH_SHORT).show();
-                return;
-            }
-            if (password.length() < 6) {
-                Toast.makeText(getApplicationContext(), "Password too short, enter minimum 6 characters!", Toast.LENGTH_SHORT).show();
-                return;
-            }
-        }
-
     public void addListenerOnButton() {
 
         final Context context = this;
