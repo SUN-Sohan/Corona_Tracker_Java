@@ -8,12 +8,20 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:254388278984:android:62ebe1fb37b84cdc6537fd",
+        "mobilesdk_app_id": "1:254388278984:android:5039562af28906d36537fd",
         "android_client_info": {
-          "package_name": "com.coronatracker.app"
+          "package_name": "com.example.corona_tracker_java"
         }
       },
       "oauth_client": [
+        {
+          "client_id": "254388278984-51i3dmjvnau75vi8nj6q1bjml5ubfs6j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.corona_tracker_java",
+            "certificate_hash": "dc78045a410e44c5ad216ae7bc80cd085730e79b"
+          }
+        },
         {
           "client_id": "254388278984-g306lt7sund7tn2v6i4dd0hgk96k9jhp.apps.googleusercontent.com",
           "client_type": 3
