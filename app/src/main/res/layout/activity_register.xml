@@ -61,14 +61,16 @@
             android:layout_width="wrap_content"
             android:layout_height="35dp"
             android:text="@string/already_registered"/>
-        <TextView
-            android:id="@+id/textview_login"
+
+        <Button
+            android:id="@+id/button_taketologinpage"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
-            android:textStyle="bold"
-            android:text="@string/login"/>
+            android:text="@string/take_me_back_to_login"
+            android:textStyle="bold" />
+
     </LinearLayout>
 
 </LinearLayout>
