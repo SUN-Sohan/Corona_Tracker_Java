@@ -9,27 +9,28 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
-public class MainActivity extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity {
     EditText mTextUsername;
     EditText mTextPassword;
-    Button mButtonLogin;
-    TextView mTextViewRegister;
+    EditText getTextConfPassword;
+    Button mButtonRegister;
+    TextView mTextViewLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_register);
 
         mTextUsername = (EditText)findViewById(R.id.edittext_username);
         mTextPassword = (EditText)findViewById(R.id.edittext_password);
-        mButtonLogin = (Button) findViewById(R.id.button_login);
-        mTextViewRegister = (TextView) findViewById(R.id.textview_register);
-        mTextViewRegister.setOnClickListener(new View.OnClickListener() {
+        mTextPassword = (EditText)findViewById(R.id.edittext_conf_password);
+        mButtonRegister = (Button)findViewById(R.id.button_login);
+        mTextViewLogin = (TextView)findViewById(R.id.textview_register);
+        mTextViewLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent registerIntent = new Intent(MainActivity.this,RegisterActivity.class);
+                Intent LoginIntent = new Intent(RegisterActivity.this,MainActivity.class);
+                startActivity(LoginIntent);
             }
         });
     }
