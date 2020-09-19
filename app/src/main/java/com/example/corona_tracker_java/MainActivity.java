@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     EditText mTextPassword;
     Button mButtonLogin;
     Button mButtonRegister;
+    Button mButtongoogleapitestingfordevs;
     TextView mTextViewRegister;
 
     @Override
@@ -25,14 +26,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mTextUsername = (EditText)findViewById(R.id.edittext_username);
-        mTextPassword = (EditText)findViewById(R.id.edittext_password);
+        mTextUsername = (EditText) findViewById(R.id.edittext_username);
+        mTextPassword = (EditText) findViewById(R.id.edittext_password);
         mButtonLogin = (Button) findViewById(R.id.button_login);
 
-        addListenerOnButton();
+        addListenerOnButtonLogin();
+        addListenerOnButtonGMapAPIDevs();
     }
 
-    public void addListenerOnButton() {
+    public void addListenerOnButtonLogin() {
 
         final Context context = this;
 
@@ -44,17 +46,31 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View arg0) {
 
                 Intent intent = new Intent(context, RegisterActivity.class);
-                            startActivity(intent);
+                startActivity(intent);
 
             }
 
         });
 
-
-
-
-
     }
 
+    public void addListenerOnButtonGMapAPIDevs() {
 
+        final Context context = this;
+
+        mButtongoogleapitestingfordevs = (Button) findViewById(R.id.button_googleapitesting);
+
+        mButtongoogleapitestingfordevs.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+                Intent intent = new Intent(context, GoogleMapsTracker.class);
+                startActivity(intent);
+
+            }
+
+        });
+
+    }
 }
