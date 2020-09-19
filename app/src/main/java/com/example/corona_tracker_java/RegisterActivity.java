@@ -25,13 +25,5 @@ public class RegisterActivity extends AppCompatActivity {
         mTextPassword = (EditText)findViewById(R.id.edittext_password);
         mTextPassword = (EditText)findViewById(R.id.edittext_conf_password);
         mButtonRegister = (Button)findViewById(R.id.button_login);
-        mTextViewLogin = (TextView)findViewById(R.id.textview_register);
-        mTextViewLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent LoginIntent = new Intent(RegisterActivity.this,MainActivity.class);
-                startActivity(LoginIntent);
-            }
-        });
     }
 }

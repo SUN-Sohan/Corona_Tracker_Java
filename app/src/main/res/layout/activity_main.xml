@@ -26,7 +26,9 @@
         android:layout_height="35dp"
         android:hint="@string/username"
         tools:layout_editor_absoluteX="28dp"
-        tools:layout_editor_absoluteY="46dp" />
+        tools:layout_editor_absoluteY="46dp"
+        android:autofillHints="username"
+        android:inputType="text" />
 
     <EditText
         android:id="@+id/edittext_password"
@@ -34,7 +36,9 @@
         android:layout_height="35dp"
         android:hint="@string/password"
         tools:layout_editor_absoluteX="29dp"
-        tools:layout_editor_absoluteY="81dp" />
+        tools:layout_editor_absoluteY="81dp"
+        android:autofillHints="password"
+        android:inputType="textPassword" />
 
     <Button
         android:id="@+id/button_login"
@@ -44,30 +48,13 @@
         tools:layout_editor_absoluteX="27dp"
         tools:layout_editor_absoluteY="129dp" />
 
-    <LinearLayout
+    <Button
+        android:id="@+id/button_register"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp">
-
-    </LinearLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="35dp"
+        android:layout_height="40dp"
         android:text="@string/not_registered"
-        tools:layout_editor_absoluteX="29dp"
-        tools:layout_editor_absoluteY="239dp" />
-
-    <TextView
-        android:id="@+id/textview_register"
-        android:layout_width="wrap_content"
-        android:layout_height="35dp"
-        android:paddingLeft="10dp"
-        android:text="@string/register"
-        android:textStyle="bold"
         tools:layout_editor_absoluteX="27dp"
-        tools:layout_editor_absoluteY="188dp" />
+        tools:layout_editor_absoluteY="129dp" />
 
 
 </LinearLayout>
