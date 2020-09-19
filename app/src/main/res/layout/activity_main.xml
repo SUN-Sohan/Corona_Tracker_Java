@@ -52,7 +52,7 @@
         android:id="@+id/button_register"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:text="@string/register"
+        android:text="@string/not_registered"
         tools:layout_editor_absoluteX="27dp"
         tools:layout_editor_absoluteY="129dp" />
 
