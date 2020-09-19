@@ -31,28 +31,11 @@ public class RegisterActivity extends AppCompatActivity {
     TextView mTextViewLogin;
 
     private FirebaseAuth mAuth;
-    private EditText inputEmail, inputPassword;
+    private EditText inputEmail;
+    private EditText inputPassword;
     private Button btnSignUp, btnResetPassword;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
 
-        mTextUsername = (EditText) findViewById(R.id.edittext_username);
-        mTextPassword = (EditText) findViewById(R.id.edittext_password);
-        mTextPassword = (EditText) findViewById(R.id.edittext_conf_password);
-        mButtonRegister = (Button) findViewById(R.id.button_login);
-
-        mAuth = FirebaseAuth.getInstance();
-        btnSignUp = (Button) findViewById(R.id.sign_up_button);
-        inputEmail = (EditText) findViewById(R.id.edittext_email);
-        inputPassword = (EditText) findViewById(R.id.edittext_password);
-        btnResetPassword = (Button) findViewById(R.id.btn_reset_password);
-
-        createNewUser();
-        addListenerOnButton();
-    }
 
 
     public void updateUI(FirebaseUser currentUser) {
@@ -85,8 +68,8 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void createNewUser() {
-        final String email = "sorockminecraft@gmail.com";
-        String password = "bigdickenergy";
+        final String email = "akhil.vem@gmail.com";
+        String password = "onwards";
 
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -110,6 +93,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         final Context context = this;
 
+        btnSignUp = (Button) findViewById(R.id.sign_up_button);
         btnSignUp.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -119,5 +103,23 @@ public class RegisterActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_register);
+
+        mTextUsername = (EditText) findViewById(R.id.edittext_username);
+        mTextPassword = (EditText) findViewById(R.id.edittext_password);
+        mTextPassword = (EditText) findViewById(R.id.edittext_conf_password);
+        mButtonRegister = (Button) findViewById(R.id.button_login);
+
+        mAuth = FirebaseAuth.getInstance();
+        inputEmail = (EditText) findViewById(R.id.edittext_email);
+        inputPassword = (EditText) findViewById(R.id.edittext_password);
+        btnResetPassword = (Button) findViewById(R.id.btn_reset_password);
+
+        addListenerOnButtonSignUp();
     }
 }
