@@ -9,4 +9,5 @@
     <string name="not_registered">not_registered?</string>
     <string name="register">register</string>
     <string name="take_me_back_to_login">take me back to login</string>
+    <string name="title_activity_google_maps_tracker">Map</string>
 </resources>
