@@ -15,12 +15,14 @@ import android.view.View.OnClickListener;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class RegisterActivity extends AppCompatActivity {
 
+    private static final String TAG = MainActivity.class.getSimpleName();
     EditText mTextUsername;
     EditText mTextPassword;
     EditText getTextConfPassword;
@@ -29,7 +31,7 @@ public class RegisterActivity extends AppCompatActivity {
     TextView mTextViewLogin;
 
     private FirebaseAuth mAuth;
-    private EditText inputEmail, inputPassword
+    private EditText inputEmail, inputPassword;
     private Button btnSignUp, btnResetPassword;
 
     @Override
@@ -47,17 +49,21 @@ public class RegisterActivity extends AppCompatActivity {
         inputEmail = (EditText) findViewById(R.id.edittext_email);
         inputPassword = (EditText) findViewById(R.id.edittext_password);
         btnResetPassword = (Button) findViewById(R.id.btn_reset_password);
+
+        createNewUser();
         addListenerOnButton();
     }
 
+
     public void updateUI(FirebaseUser currentUser) {
-        if(currentUser != null){
-            Toast.makeText(this,"U Signed In successfully",Toast.LENGTH_LONG).show();
-            startActivity(new Intent(this,GoogleMapsTracker.class));
-        }else {
-            Toast.makeText(this,"U Didnt signed in",Toast.LENGTH_LONG).show();
+        if (currentUser != null) {
+            Toast.makeText(this, "U Signed In successfully", Toast.LENGTH_LONG).show();
+            startActivity(new Intent(this, GoogleMapsTracker.class));
+        } else {
+            Toast.makeText(this, "U Didnt signed in", Toast.LENGTH_LONG).show();
         }
     }
+
 
     public void addListenerOnButton() {
 
@@ -78,5 +84,40 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 
+    private void createNewUser() {
+        final String email = "sorockminecraft@gmail.com";
+        String password = "bigdickenergy";
 
+        mAuth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            Log.d(TAG, "Authentication successful");
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            updateUI(user);
+                        } else {
+                            Log.w(TAG, "createUserWithEmail:failure", task.getException());
+                            Toast.makeText(RegisterActivity.this, "Authentication failed.",
+                                    Toast.LENGTH_SHORT).show();
+                            updateUI(null);
+                        }
+                    }
+                });
+    }
+
+    public void addListenerOnButtonSignUp() {
+
+        final Context context = this;
+
+        btnSignUp.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+                createNewUser();
+
+            }
+        });
+    }
 }
