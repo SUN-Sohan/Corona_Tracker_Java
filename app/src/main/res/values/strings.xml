@@ -11,4 +11,7 @@
     <string name="take_me_back_to_login">take me back to login</string>
     <string name="title_activity_google_maps_tracker">Map</string>
     <string name="googleapitestingfordevs">GoogleAPITestingForDevs</string>
+    <string name="hint_password">hint_password</string>
+    <string name="email">email</string>
+    <string name="action_sign_in_short">action_sign_in_short</string>
 </resources>

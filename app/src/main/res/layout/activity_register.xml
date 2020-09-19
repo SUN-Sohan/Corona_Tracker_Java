@@ -22,18 +22,22 @@
         app:layout_constraintVertical_bias="0.022" />
 
     <EditText
-        android:id="@+id/edittext_username"
+        android:id="@+id/edittext_email"
         android:layout_width="wrap_content"
         android:layout_height="35dp"
-        android:hint="@string/username"
+        android:hint="@string/email"
         android:autofillHints="username"
-        android:inputType="text" />
+        android:inputType="textEmailAddress"
+        android:imeOptions="actionNext"
+        android:maxLines="1"/>
     <EditText
         android:id="@+id/edittext_password"
         android:layout_width="wrap_content"
         android:layout_height="35dp"
-        android:hint="@string/password"
-        android:autofillHints="password"
+        android:focusableInTouchMode="true"
+        android:hint="@string/hint_password"
+        android:imeOptions="actionUnspecified"
+        android:maxLines="1"
         android:inputType="textPassword" />
 
     <EditText
@@ -45,12 +49,21 @@
         android:inputType="textPassword"/>
 
     <Button
-        android:id="@+id/button_register"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/register"/>
+        android:id="@+id/sign_up_button"
+        style="?android:textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/action_sign_in_short"
+        android:textStyle="bold" />
 
+    <Button
+        android:id="@+id/btn_reset_password"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dip"
+        android:background="@null"
+        android:textAllCaps="false"/>
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
