@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "254388278984",
+    "firebase_url": "https://corona-tracker-java.firebaseio.com",
+    "project_id": "corona-tracker-java",
+    "storage_bucket": "corona-tracker-java.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:254388278984:android:62ebe1fb37b84cdc6537fd",
+        "android_client_info": {
+          "package_name": "com.coronatracker.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "254388278984-g306lt7sund7tn2v6i4dd0hgk96k9jhp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxDMx0Yb88NM3J97RY4KLlUCKjFzxATfo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "254388278984-g306lt7sund7tn2v6i4dd0hgk96k9jhp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
